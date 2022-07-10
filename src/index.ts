@@ -89,6 +89,10 @@ export const wallet_registerOnboardingCompleted = async () => {
     method: "wallet_registerOnboardingCompleted",
   });
 };
+
+export const eth_chainId = async () => {
+  return ethereum.request<string>({ method: "eth_chainId" });
+};
 export interface WatchAssetParams {
   type: "ERC20"; // In the future, other standards will be supported
   options: {
@@ -120,6 +124,7 @@ export const listen = <T>(
   event: MetamaskEvents,
   handler: (args: T) => void
 ) => {
+  if (!ethereum) return () => {};
   ethereum.on(event, handler);
   return () => {
     ethereum.removeListener(event, handler);
@@ -140,7 +145,7 @@ export const onConnect = (handler: (connectInfo: ConnectInfo) => void) => {
 export const onDisconnect = (handler: (error: ProviderRpcError) => void) => {
   return listen<ProviderRpcError>("disconnect", handler);
 };
-interface ProviderMessage {
+export interface ProviderMessage {
   type: string;
   data: unknown;
 }
@@ -152,3 +157,5 @@ export interface ProviderRpcError extends Error {
   code: number;
   data?: unknown;
 }
+
+export const isEthereum = !!ethereum;
