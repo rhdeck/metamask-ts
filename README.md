@@ -15,6 +15,8 @@ metamask-ts - v1.0.0
 ### Interfaces
 
 - [AddEthereumChainParameter](#interfacesaddethereumchainparametermd)
+- [ConnectInfo](#interfacesconnectinfomd)
+- [ProviderRpcError](#interfacesproviderrpcerrormd)
 - [RequestedPermissions](#interfacesrequestedpermissionsmd)
 - [SwitchEthereumChainParameter](#interfacesswitchethereumchainparametermd)
 - [WatchAssetParams](#interfaceswatchassetparamsmd)
@@ -31,6 +33,10 @@ metamask-ts - v1.0.0
 - [eth_requestAccounts](#eth_requestaccounts)
 - [listen](#listen)
 - [onAccountsChanged](#onaccountschanged)
+- [onChainChanged](#onchainchanged)
+- [onConnect](#onconnect)
+- [onDisconnect](#ondisconnect)
+- [onMessage](#onmessage)
 - [wallet_addEthereumChain](#wallet_addethereumchain)
 - [wallet_getPermissions](#wallet_getpermissions)
 - [wallet_registerOnboardingCompleted](#wallet_registeronboardingcompleted)
@@ -47,7 +53,7 @@ metamask-ts - v1.0.0
 
 #### Defined in
 
-[index.ts:113](https://github.com/rhdeck/metamask-ts/blob/f4c1701/src/index.ts#L113)
+[src/index.ts:113](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L113)
 
 ## Functions
 
@@ -68,7 +74,7 @@ metamask-ts - v1.0.0
 
 #### Defined in
 
-[index.ts:28](https://github.com/rhdeck/metamask-ts/blob/f4c1701/src/index.ts#L28)
+[src/index.ts:28](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L28)
 
 ___
 
@@ -88,7 +94,7 @@ ___
 
 #### Defined in
 
-[index.ts:39](https://github.com/rhdeck/metamask-ts/blob/f4c1701/src/index.ts#L39)
+[src/index.ts:39](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L39)
 
 ___
 
@@ -102,7 +108,7 @@ ___
 
 #### Defined in
 
-[index.ts:34](https://github.com/rhdeck/metamask-ts/blob/f4c1701/src/index.ts#L34)
+[src/index.ts:34](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L34)
 
 ___
 
@@ -135,7 +141,7 @@ ___
 
 #### Defined in
 
-[index.ts:119](https://github.com/rhdeck/metamask-ts/blob/f4c1701/src/index.ts#L119)
+[src/index.ts:119](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L119)
 
 ___
 
@@ -147,7 +153,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `handler` | (`args`: `string`[]) => `void` |
+| `handler` | (`accounts`: `string`[]) => `void` |
 
 #### Returns
 
@@ -161,7 +167,111 @@ ___
 
 #### Defined in
 
-[index.ts:128](https://github.com/rhdeck/metamask-ts/blob/f4c1701/src/index.ts#L128)
+[src/index.ts:128](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L128)
+
+___
+
+### onChainChanged
+
+▸ `Const` **onChainChanged**(`handler`): () => `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `handler` | (`chain`: `string`) => `void` |
+
+#### Returns
+
+`fn`
+
+▸ (): `void`
+
+##### Returns
+
+`void`
+
+#### Defined in
+
+[src/index.ts:131](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L131)
+
+___
+
+### onConnect
+
+▸ `Const` **onConnect**(`handler`): () => `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `handler` | (`connectInfo`: [`ConnectInfo`](#interfacesconnectinfomd)) => `void` |
+
+#### Returns
+
+`fn`
+
+▸ (): `void`
+
+##### Returns
+
+`void`
+
+#### Defined in
+
+[src/index.ts:137](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L137)
+
+___
+
+### onDisconnect
+
+▸ `Const` **onDisconnect**(`handler`): () => `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `handler` | (`error`: [`ProviderRpcError`](#interfacesproviderrpcerrormd)) => `void` |
+
+#### Returns
+
+`fn`
+
+▸ (): `void`
+
+##### Returns
+
+`void`
+
+#### Defined in
+
+[src/index.ts:140](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L140)
+
+___
+
+### onMessage
+
+▸ `Const` **onMessage**(`handler`): () => `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `handler` | (`message`: `ProviderMessage`) => `void` |
+
+#### Returns
+
+`fn`
+
+▸ (): `void`
+
+##### Returns
+
+`void`
+
+#### Defined in
+
+[src/index.ts:147](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L147)
 
 ___
 
@@ -181,7 +291,7 @@ ___
 
 #### Defined in
 
-[index.ts:70](https://github.com/rhdeck/metamask-ts/blob/f4c1701/src/index.ts#L70)
+[src/index.ts:70](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L70)
 
 ___
 
@@ -195,7 +305,7 @@ ___
 
 #### Defined in
 
-[index.ts:45](https://github.com/rhdeck/metamask-ts/blob/f4c1701/src/index.ts#L45)
+[src/index.ts:45](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L45)
 
 ___
 
@@ -209,7 +319,7 @@ ___
 
 #### Defined in
 
-[index.ts:87](https://github.com/rhdeck/metamask-ts/blob/f4c1701/src/index.ts#L87)
+[src/index.ts:87](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L87)
 
 ___
 
@@ -229,7 +339,7 @@ ___
 
 #### Defined in
 
-[index.ts:50](https://github.com/rhdeck/metamask-ts/blob/f4c1701/src/index.ts#L50)
+[src/index.ts:50](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L50)
 
 ___
 
@@ -249,7 +359,7 @@ ___
 
 #### Defined in
 
-[index.ts:107](https://github.com/rhdeck/metamask-ts/blob/f4c1701/src/index.ts#L107)
+[src/index.ts:107](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L107)
 
 ___
 
@@ -269,7 +379,7 @@ ___
 
 #### Defined in
 
-[index.ts:81](https://github.com/rhdeck/metamask-ts/blob/f4c1701/src/index.ts#L81)
+[src/index.ts:81](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L81)
 
 ___
 
@@ -289,7 +399,7 @@ ___
 
 #### Defined in
 
-[index.ts:101](https://github.com/rhdeck/metamask-ts/blob/f4c1701/src/index.ts#L101)
+[src/index.ts:101](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L101)
 
 
 <a name="interfacesaddethereumchainparametermd"></a>
@@ -317,7 +427,7 @@ ___
 
 #### Defined in
 
-[index.ts:67](https://github.com/rhdeck/metamask-ts/blob/f4c1701/src/index.ts#L67)
+[src/index.ts:67](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L67)
 
 ___
 
@@ -327,7 +437,7 @@ ___
 
 #### Defined in
 
-[index.ts:59](https://github.com/rhdeck/metamask-ts/blob/f4c1701/src/index.ts#L59)
+[src/index.ts:59](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L59)
 
 ___
 
@@ -337,7 +447,7 @@ ___
 
 #### Defined in
 
-[index.ts:60](https://github.com/rhdeck/metamask-ts/blob/f4c1701/src/index.ts#L60)
+[src/index.ts:60](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L60)
 
 ___
 
@@ -347,7 +457,7 @@ ___
 
 #### Defined in
 
-[index.ts:68](https://github.com/rhdeck/metamask-ts/blob/f4c1701/src/index.ts#L68)
+[src/index.ts:68](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L68)
 
 ___
 
@@ -365,7 +475,7 @@ ___
 
 #### Defined in
 
-[index.ts:61](https://github.com/rhdeck/metamask-ts/blob/f4c1701/src/index.ts#L61)
+[src/index.ts:61](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L61)
 
 ___
 
@@ -375,7 +485,115 @@ ___
 
 #### Defined in
 
-[index.ts:66](https://github.com/rhdeck/metamask-ts/blob/f4c1701/src/index.ts#L66)
+[src/index.ts:66](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L66)
+
+
+<a name="interfacesconnectinfomd"></a>
+
+[metamask-ts - v1.0.0](#readmemd) / ConnectInfo
+
+# Interface: ConnectInfo
+
+## Table of contents
+
+### Properties
+
+- [chainId](#chainid)
+
+## Properties
+
+### chainId
+
+• **chainId**: `string`
+
+#### Defined in
+
+[src/index.ts:135](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L135)
+
+
+<a name="interfacesproviderrpcerrormd"></a>
+
+[metamask-ts - v1.0.0](#readmemd) / ProviderRpcError
+
+# Interface: ProviderRpcError
+
+## Hierarchy
+
+- `Error`
+
+  ↳ **`ProviderRpcError`**
+
+## Table of contents
+
+### Properties
+
+- [code](#code)
+- [data](#data)
+- [message](#message)
+- [name](#name)
+- [stack](#stack)
+
+## Properties
+
+### code
+
+• **code**: `number`
+
+#### Defined in
+
+[src/index.ts:152](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L152)
+
+___
+
+### data
+
+• `Optional` **data**: `unknown`
+
+#### Defined in
+
+[src/index.ts:153](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L153)
+
+___
+
+### message
+
+• **message**: `string`
+
+#### Overrides
+
+Error.message
+
+#### Defined in
+
+[src/index.ts:151](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L151)
+
+___
+
+### name
+
+• **name**: `string`
+
+#### Inherited from
+
+Error.name
+
+#### Defined in
+
+node_modules/typescript/lib/lib.es5.d.ts:973
+
+___
+
+### stack
+
+• `Optional` **stack**: `string`
+
+#### Inherited from
+
+Error.stack
+
+#### Defined in
+
+node_modules/typescript/lib/lib.es5.d.ts:975
 
 
 <a name="interfacesrequestedpermissionsmd"></a>
@@ -409,7 +627,7 @@ ___
 
 #### Defined in
 
-[index.ts:79](https://github.com/rhdeck/metamask-ts/blob/f4c1701/src/index.ts#L79)
+[src/index.ts:79](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L79)
 
 
 <a name="interfaceswatchassetparamsmd"></a>
@@ -442,7 +660,7 @@ ___
 
 #### Defined in
 
-[index.ts:94](https://github.com/rhdeck/metamask-ts/blob/f4c1701/src/index.ts#L94)
+[src/index.ts:94](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L94)
 
 ___
 
@@ -452,7 +670,7 @@ ___
 
 #### Defined in
 
-[index.ts:93](https://github.com/rhdeck/metamask-ts/blob/f4c1701/src/index.ts#L93)
+[src/index.ts:93](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L93)
 
 
 <a name="interfacesweb3walletpermissionmd"></a>
@@ -476,7 +694,7 @@ ___
 
 #### Defined in
 
-[index.ts:21](https://github.com/rhdeck/metamask-ts/blob/f4c1701/src/index.ts#L21)
+[src/index.ts:21](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L21)
 
 ___
 
@@ -486,4 +704,4 @@ ___
 
 #### Defined in
 
-[index.ts:18](https://github.com/rhdeck/metamask-ts/blob/f4c1701/src/index.ts#L18)
+[src/index.ts:18](https://github.com/rhdeck/metamask-ts/blob/a8ba5eb/src/index.ts#L18)
