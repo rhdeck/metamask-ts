@@ -125,8 +125,10 @@ export const listen = <T>(
   handler: (args: T) => void
 ) => {
   if (!ethereum) return () => {};
+  console.log("Adding listener for event", event);
   ethereum.on(event, handler);
   return () => {
+    console.log("Removing listener for event", event);
     ethereum.removeListener(event, handler);
   };
 };
@@ -159,3 +161,10 @@ export interface ProviderRpcError extends Error {
 }
 
 export const isEthereum = !!ethereum;
+
+export const isConnected = () => {
+  return ethereum && ethereum.isConnected();
+};
+export const eth_accounts = async () => {
+  return ethereum.request<string[]>({ method: "eth_accounts" });
+};
